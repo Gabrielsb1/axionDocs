@@ -24,7 +24,7 @@ class OllamaClient:
                     "num_predict": 1000  # Limita tamanho da resposta para ser mais rápido
                 }
             }
-            response = requests.post(url, json=payload, timeout=120)  # Reduz timeout
+            response = requests.post(url, json=payload, timeout=300)  # Reduz timeout
             response.raise_for_status()
             result = response.json()
             return result.get("response", "")
